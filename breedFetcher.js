@@ -3,9 +3,9 @@ const request = require('request');
 
 const fetchBreedDescription = function(breedDescription, callback) {
   
-  const url = `https://api.thecatapi.com/v1/breeds/search?q=${breedDescription}`;
+  const source = `https://api.thecatapi.com/v1/breeds/search?q=${breedDescription}`;
 
-  request(url, function(error, response, body) {
+  request(source, function(error, response, body) {
     if (error) {
       return callback(error, null);
     }
@@ -22,4 +22,4 @@ const fetchBreedDescription = function(breedDescription, callback) {
 };
 
 
-module.exports = fetchBreedDescription;
+module.exports = { fetchBreedDescription };
